@@ -16,16 +16,18 @@ const criticalAssets = {
 export default function SplashScreen({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true)
   const [progress, setProgress] = useState(0)
-  
+
   useEffect(() => {
     let totalAssets = criticalAssets.images.length
     let loadedAssets = 0
-    
+
     const updateProgress = () => {
       loadedAssets++
+
       const newProgress = Math.round((loadedAssets / totalAssets) * 100)
+
       setProgress(newProgress)
-      
+
       if (loadedAssets === totalAssets) {
         // Adiciona um pequeno atraso para uma transição suave
         setTimeout(() => {
@@ -33,23 +35,24 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
         }, 1000)
       }
     }
-    
+
     // Pré-carregar imagens
     criticalAssets.images.forEach(src => {
       const img = new Image()
+
       img.src = src
       img.onload = updateProgress
       img.onerror = updateProgress // Continua mesmo com erro
     })
-    
+
     // Timeout de segurança (caso algo falhe)
     const safetyTimeout = setTimeout(() => {
       setLoading(false)
     }, 5000)
-    
+
     return () => clearTimeout(safetyTimeout)
   }, [])
-  
+
   return (
     <AnimatePresence mode="wait">
       {loading ? (
@@ -60,15 +63,17 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
           exit={{ opacity: 0 }}
           className="fixed inset-0 flex flex-col items-center justify-center bg-custom-background z-50"
         >
-          <motion.img 
-            src="/images/logo-resgate-dos-otimistas.png" 
+          <motion.img
+            src="/images/oro/v9/o-destrave-logotipo.webp"
             alt="Logo"
+            className="w-[220px] md:w-[320px]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
           />
+
           <div className="w-64 h-2 bg-custom-primary-gold rounded-full overflow-hidden">
-            <motion.div 
+            <motion.div
               className="h-full"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
@@ -90,4 +95,4 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
       )}
     </AnimatePresence>
   )
-} 
+}

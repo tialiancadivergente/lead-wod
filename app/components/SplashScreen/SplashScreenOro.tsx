@@ -35,12 +35,14 @@ export default function SplashScreenOro({ children, theme }: { children: React.R
   useEffect(() => {
     let totalAssets = criticalAssets.images.length
     let loadedAssets = 0
-    
+
     const updateProgress = () => {
       loadedAssets++
+
       const newProgress = Math.round((loadedAssets / totalAssets) * 100)
+
       setProgress(newProgress)
-      
+
       if (loadedAssets === totalAssets) {
         // Adiciona um pequeno atraso para uma transição suave
         setTimeout(() => {
@@ -48,23 +50,24 @@ export default function SplashScreenOro({ children, theme }: { children: React.R
         }, 1000)
       }
     }
-    
+
     // Pré-carregar imagens
     criticalAssets.images.forEach(src => {
       const img = new Image()
+
       img.src = src
       img.onload = updateProgress
       img.onerror = updateProgress // Continua mesmo com erro
     })
-    
+
     // Timeout de segurança (caso algo falhe)
     const safetyTimeout = setTimeout(() => {
       setLoading(false)
     }, 5000)
-    
+
     return () => clearTimeout(safetyTimeout)
   }, [])
-  
+
   return (
     <AnimatePresence mode="wait">
       {loading ? (
@@ -73,24 +76,24 @@ export default function SplashScreenOro({ children, theme }: { children: React.R
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 flex flex-col items-center justify-center sm:bg-center bg-left bg-cover bg-no-repeat z-50"
-          style={{ backgroundImage: `${isDark ? "url('/images/v4/SplashScreenV4Dark.webp')" : "url('/images/v4/SplashScreenV4.webp')"}` }}
+          className="fixed inset-0 flex flex-col items-center justify-center bg-[#07242C] z-50"
         >
-          <motion.img 
-            src={isDark ? "/images/logo_o_resgate_dos_otimistas.webp" : "/images/logo-oro-dark.webp"} 
+          <motion.img
+            src="/images/oro/v9/o-destrave-logotipo.webp"
             alt="Logo"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className={isDark ? 'w-[480px]' : 'w-[424px]'}
+            className="w-[220px] md:w-[320px]"
           />
-          <div className="w-64 h-2 bg-[#07242c] rounded-full overflow-hidden">
-            <motion.div 
+
+          <div className="w-64 h-2 bg-[#0E3A46] rounded-full overflow-hidden mt-6">
+            <motion.div
               className="h-full"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.3 }}
-              style={{ backgroundColor: "#b91216" }}
+              style={{ backgroundColor: "#C0964B" }}
             ></motion.div>
           </div>
         </motion.div>
@@ -107,4 +110,4 @@ export default function SplashScreenOro({ children, theme }: { children: React.R
       )}
     </AnimatePresence>
   )
-} 
+}
