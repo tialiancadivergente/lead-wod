@@ -21,7 +21,7 @@ import type {
 import ContainerTeste from "./container";
 import { Headline } from "./headline";
 
-export default function Formv7() {
+export default function Formv9() {
   const params = useParams();
   const searchParams = useSearchParams();
   const [titleRedLine, setTitleRedLine] = useState<React.ReactNode | null>(
@@ -183,7 +183,7 @@ export default function Formv7() {
         throw new Error("requestId nao retornado na resposta.");
       }
 
-      window.location.href = `/quiz-oro/?temperature=${temperatura}&requestId=${encodeURIComponent(
+      window.location.href = `/quiz-wod/?temperature=${temperatura}&requestId=${encodeURIComponent(
         requestId
       )}&email=${encodeURIComponent(data.email)}&phone=${encodeURIComponent(data.normalizedPhone)}`;
     } catch (error) {
