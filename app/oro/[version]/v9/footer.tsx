@@ -29,14 +29,14 @@ export default function Footer() {
 
 				<div className="font-normal font-raleway text-[14px] leading-[22px] text-white text-center lg:text-right order-3 lg:order-3 flex flex-col">
 					<Link
-						href="COLE_O_LINK_DA_POLITICA_AQUI"
+						href="https://rc.odestrave.com.br/politica-de-privacidade"
 						className="hover:opacity-80 transition-opacity"
 					>
 						Política de privacidade
 					</Link>
 
 					<Link
-						href="COLE_O_LINK_DOS_TERMOS_AQUI"
+						href="https://rc.odestrave.com.br/termos-de-uso"
 						className="hover:opacity-80 transition-opacity"
 					>
 						Termos de uso
