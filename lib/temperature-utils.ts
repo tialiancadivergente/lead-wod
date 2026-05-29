@@ -13,12 +13,12 @@ export type NormalizedTemperature =
   (typeof NORMALIZED_TEMPERATURE_VALUES)[number];
 
 export const TEMPERATURE_TAG_MAP_ORO: Record<string, string> = {
-  'q': 'WOD 2025[TRAFEGO]',
-  'm': 'WOD 2025[TRAFEGO]',
-  'f': 'WOD 2025[TRAFEGO]',
-  't': 'WOD 2025[TRAFEGO]',
-  'o': 'WOD 2025[ORGANICO]',
-  'org': 'WOD 2025[ORGANICO]'
+  'q': '[WOD][2026][TRAFEGO]',
+  'm': '[WOD][2026][TRAFEGO]',
+  'f': '[WOD][2026][TRAFEGO]',
+  't': '[WOD][2026][TRAFEGO]',
+  'o': '[WOD][2026][ORGANICO]',
+  'org': '[WOD][2026][ORGANICO]'
 };
 
 export const getTagIdByTemperature = (temperature: string): number | null => {
