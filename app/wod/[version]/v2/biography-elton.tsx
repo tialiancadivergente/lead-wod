@@ -5,44 +5,63 @@ import React from "react";
 export default function BiographyElton() {
 	return (
 		<section
-			className={`min-h-[1256px] md:min-h-[1200px] flex flex-col items-center pb-14 p-4 md:p-0 justify-start overflow-hidden bg-[#000000] bg-[url('/images/oro/v9/bg_bio_elton_mobile.webp.webp')] md:bg-[url('/images/oro/v9/bg_bio_elton_desktop.webp')] bg-contain md:bg-cover bg-top md:bg-center bg-no-repeat z-0`}
+			className={`min-h-[922px] md:min-h-[762px] flex flex-col items-center pb-14 p-4 md:p-0 justify-start overflow-hidden bg-[#000000] bg-[url('/images/oro/v10/bg_segunda_dobra_mobile.webp')] md:bg-[url('/images/oro/v10/bg_segunda_dobra_desktop.webp')] bg-cover bg-top md:bg-center bg-no-repeat z-0`}
 		>
 			<div className="mx-auto lg:w-[1080px] w-full">
-				<div className="flex flex-col items-center pt-[10px] md:pt-[60px]">
-					<h2 className="font-spectral font-bold text-[#F4F0E1] text-[18px] leading-[135%] md:text-[34px] md:leading-[50px] text-center">
-						Quem vai te destravar?
+				<div className="flex flex-col items-center pt-[40px] md:pt-[60px]">
+					<h2 className="font-spectral font-bold text-[#F4F0E1] text-[18px] leading-[135%] md:text-[34px] md:leading-[50px] text-center mt-[340px] md:mt-0">
+						O que você irá aprender
+						<br />
+						<span className="text-[#C0964B]">n’O DESTRAVE</span>
 					</h2>
 
-					<div className="flex flex-col md:flex-row items-start justify-end gap-[30px] md:gap-[60px] mt-[340px] md:mt-[70px] w-full">
-						<div className="w-full md:max-w-[520px] md:ml-auto md:mr-[-80px]">
-							<h3 className="font-spectral font-bold text-[#C0964B] text-[14px] leading-[22px] md:text-[24px] md:leading-[36px] mb-[24px]">
-								Elton Euler
+					<div className="flex flex-col md:flex-row items-start justify-end gap-[30px] md:gap-[60px] w-full">
+						<div className="w-full md:max-w-[520px] md:ml-auto md:mr-[-80px] mt-[340px] -translate-y-[280px] md:translate-y-0 md:mt-[70px]">
+							<h3 className="font-spectral font-bold text-[#F4F0E1] text-[18px] leading-[24px] md:text-[28px] md:leading-[36px] mb-[24px]">
+								A encarar a verdade
+								<br />
+								que evita há anos
 							</h3>
 
-							<div className="flex flex-col gap-[14px] font-spectral font-normal text-[#F4F0E1] text-[14px] leading-[22px] md:text-[20px] md:leading-[26px]">
-								<p>
-									É a personificação da <span className="text-[#C0964B]">persistência e da superação.</span> Ele entende como ninguém a frustração de <span className="text-[#C0964B]">se esforçar ao máximo e, ainda assim, não alcançar os resultados esperados.</span> Antes de se tornar um multimilionário e referência no desenvolvimento humano, Elton enfrentou <span className="text-[#C0964B]">17 fracassos em seus negócios</span> e chegou a acreditar que o sucesso não era para ele.
-								</p>
+							<div className="flex flex-col gap-[10px]">
+								<div className="w-full min-h-[36px] md:min-h-[48px] rounded-[10px] border border-[#C0964B] bg-[#03110C]/80 px-4 py-3 flex items-center gap-3">
+									<div className="w-[20px] h-[20px] rounded-full border border-[#C0964B] flex items-center justify-center text-[#C0964B] text-[12px] shrink-0">
+										✓
+									</div>
 
-								<p>
-									Elton percebeu que o <span className="text-[#C0964B]">problema não era esforço ou capacidade, mas a permissão para avançar.</span> Ele entendeu que muitas pessoas vivem a mesma realidade que ele enfrentou no passado — <span className="text-[#C0964B]">trabalham duro, mas não rompem a barreira do sucesso.</span>
-								</p>
+									<p className="font-spectral font-normal text-[#F4F0E1] text-[14px] md:text-[14px] leading-[140%]">
+										Por que sente{" "}
+										<span className="font-bold">
+											culpa quando começa a prosperar?
+										</span>
+									</p>
+								</div>
 
-								<p>
-									Foi então que decidiu ajudar outros a <span className="text-[#C0964B]">destravar suas vidas,</span> mostrando o que realmente <span className="text-[#C0964B]">falta para sair da estagnação e alcançar a prosperidade.</span>
-								</p>
+								<div className="w-full min-h-[36px] md:min-h-[48px] rounded-[10px] border border-[#C0964B] bg-[#03110C]/80 px-4 py-3 flex items-center gap-3">
+									<div className="w-[20px] h-[20px] rounded-full border border-[#C0964B] flex items-center justify-center text-[#C0964B] text-[12px] shrink-0">
+										✓
+									</div>
 
-								<p>
-									Hoje, Elton é reconhecido por <span className="text-[#C0964B]">métodos autênticos e revolucionários</span> que entregam uma clareza única – sua marca registrada. Ele é <span className="text-[#C0964B]">criador da Análise Corporal, idealizador de A Lógica da Vida e fundador da Aliança Divergente,</span> que já conta com mais de <span className="text-[#C0964B]">100 mil aliados</span> no Brasil e no mundo.
-								</p>
+									<p className="font-spectral font-normal text-[#F4F0E1] text-[14px] md:text-[14px] leading-[140%]">
+										Por que tem{" "}
+										<span className="font-bold">
+											medo de dar certo e perder o controle?
+										</span>
+									</p>
+								</div>
 
-								<p>
-									Sua capacidade de <span className="text-[#C0964B]">decifrar padrões invisíveis e eliminar bloqueios emocionais</span> inspira milhares de pessoas a finalmente <span className="text-[#C0964B]">avançarem sem retrocessos.</span>
-								</p>
+								<div className="w-full min-h-[36px] md:min-h-[48px] rounded-[10px] border border-[#C0964B] bg-[#03110C]/80 px-4 py-3 flex items-center gap-3">
+									<div className="w-[20px] h-[20px] rounded-full border border-[#C0964B] flex items-center justify-center text-[#C0964B] text-[12px] shrink-0">
+										✓
+									</div>
 
-								<p>
-									<span className="text-[#C0964B]">O DESTRAVE</span> não é mais um evento motivacional. Ele é um divisor de águas, e Elton Euler é a pessoa certa para conduzir essa transformação.
-								</p>
+									<p className="font-spectral font-normal text-[#F4F0E1] text-[14px] md:text-[14px] leading-[140%]">
+										Por que, mesmo sendo capaz,{" "}
+										<span className="font-bold">
+											não sustenta o sucesso que conquista?
+										</span>
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>

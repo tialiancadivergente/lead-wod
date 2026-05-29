@@ -40,9 +40,7 @@ export default function ContainerTeste({
 
 			<BiographyElton />
 
-			<BiographyRamon />
-
-			<Footer />
+		    <Footer />
 		</>
 	);
 }

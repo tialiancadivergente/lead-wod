@@ -55,10 +55,10 @@ function QuizNewPageContent() {
 
   // *********** INICIO - CODIGO LEGADO *********** 
   const mapTagSendFlow = {
-    f: "https://redirects.aliancadivergente.com.br/q6xh",
-    org: "https://redirects.aliancadivergente.com.br/oro-pages-org",
-    m: "https://redirects.aliancadivergente.com.br/oro-pages-m",
-    q: "https://redirects.aliancadivergente.com.br/oro-pages-q",
+    f: "https://sendflow.click/i/wod-cap-2026",
+    org: "https://sendflow.click/i/wod-cap-2026",
+    m: "https://sendflow.click/i/wod-cap-2026",
+    q: "https://sendflow.click/i/wod-cap-2026",
 } as any;
 
   const getWhatsappUrl = () => {

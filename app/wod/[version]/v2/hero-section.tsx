@@ -25,7 +25,7 @@ export default function HeroSection({
 	return (
 		<section
 			id="hero"
-			className={`relative h-[894px] md:h-[860px] flex flex-col items-center p-4 md:p-0 justify-start md:justify-center overflow-hidden bg-[#071117] bg-[url('/images/oro/v9/bg_hero_wod_mobile.webp')] md:bg-[url('/images/oro/v9/bg_hero_wod_desktop.webp')] bg-cover bg-center z-0`}
+			className={`relative h-[973px] md:h-[860px] flex flex-col items-center p-4 md:p-0 justify-start md:justify-center overflow-hidden bg-[#071117] bg-[url('/images/oro/v10/bg_mobile.webp')] md:bg-[url('/images/oro/v10/bg_desktop.webp')] bg-cover bg-center z-0`}
 		>
 			<div
 				className={`mx-auto sm:px-4 2md:pt-6 pt-2 relative lg:w-[1080px] w-full flex justify-center md:justify-start`}
