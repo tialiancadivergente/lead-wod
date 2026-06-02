@@ -36,7 +36,7 @@ export default function Footer() {
 					</Link>
 
 					<Link
-						href="COLhttps://rc.odestrave.com.br/termos-de-uso"
+						href="https://rc.odestrave.com.br/termos-de-uso"
 						className="hover:opacity-80 transition-opacity"
 					>
 						Termos de uso
