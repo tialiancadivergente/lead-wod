@@ -27,10 +27,36 @@ export default function HeroSection({
 			id="hero"
 			className={`relative h-[973px] md:h-[860px] flex flex-col items-center p-4 md:p-0 justify-start md:justify-center overflow-hidden bg-[#071117] bg-[url('/images/oro/v10/bg_mobile.webp')] md:bg-[url('/images/oro/v10/bg_desktop.webp')] bg-cover bg-center z-0`}
 		>
+			<style jsx global>{`
+				@media (max-width: 767px) {
+					.hero-redline-mobile,
+					.hero-redline-mobile * {
+						font-size: 16px !important;
+						line-height: 112% !important;
+					}
+
+					.hero-redline-mobile {
+						display: flex !important;
+						flex-direction: column !important;
+						gap: 0px !important;
+					}
+
+					.hero-redline-mobile p,
+					.hero-redline-mobile div {
+						margin: 0 !important;
+						padding: 0 !important;
+					}
+
+					.hero-redline-mobile br {
+						display: none !important;
+					}
+				}
+			`}</style>
+
 			<div
 				className={`mx-auto sm:px-4 2md:pt-6 pt-2 relative lg:w-[1080px] w-full flex justify-center md:justify-start`}
 			>
-				<div className="w-full 2md:max-w-[528px] max-w-[440px] -mt-[20px] md:-mt-[100px] md:ml-[-40px]">
+				<div className="w-full 2md:max-w-[528px] max-w-[440px] mt-[90px] md:-mt-[60px] md:ml-[-40px]">
 					<div className="mt-[180px] md:mt-0 mb-0 flex justify-start">
 						<img
 							src="/images/oro/v9/logo_destrave.png"
@@ -62,7 +88,7 @@ export default function HeroSection({
 							</div>
 						</div>
 
-						<div className="mb-5 mt-2 text-[#D3CAC0] 2md:text-2xl text-base font-extralight font-spectral max-md:!text-[18px] max-md:[&_*]:!text-[18px]">
+						<div className="hero-redline-mobile mb-5 mt-2 text-[#D3CAC0] 2md:text-2xl text-base font-extralight font-spectral leading-[160%]">
 							{redLine ? (
 								redLine
 							) : (

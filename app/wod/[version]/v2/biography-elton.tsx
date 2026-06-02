@@ -5,7 +5,7 @@ import React from "react";
 export default function BiographyElton() {
 	return (
 		<section
-			className={`min-h-[922px] md:min-h-[762px] flex flex-col items-center pb-14 p-4 md:p-0 justify-start overflow-hidden bg-[#000000] bg-[url('/images/oro/v10/bg_segunda_dobra_mobile.webp')] md:bg-[url('/images/oro/v10/bg_segunda_dobra_desktop.webp')] bg-cover bg-top md:bg-center bg-no-repeat z-0`}
+			className={`min-h-[500px] md:min-h-[762px] flex flex-col items-center pb-0 p-4 md:p-0 justify-start overflow-hidden bg-[#000000] bg-[url('/images/oro/v10/bg_segunda_dobra_mobile.webp')] md:bg-[url('/images/oro/v10/bg_segunda_dobra_desktop.webp')] bg-cover bg-top md:bg-center bg-no-repeat z-0`}
 		>
 			<div className="mx-auto lg:w-[1080px] w-full">
 				<div className="flex flex-col items-center pt-[40px] md:pt-[60px]">
