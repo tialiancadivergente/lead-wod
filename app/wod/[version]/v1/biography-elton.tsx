@@ -5,21 +5,21 @@ import React from "react";
 export default function BiographyElton() {
 	return (
 		<section
-			className={`min-h-[1256px] md:min-h-[1200px] flex flex-col items-center pb-14 p-4 md:p-0 justify-start overflow-hidden bg-[#000000] bg-[url('/images/oro/v9/bg_bio_elton_mobile.webp.webp')] md:bg-[url('/images/oro/v9/bg_bio_elton_desktop.webp')] bg-contain md:bg-cover bg-top md:bg-center bg-no-repeat z-0`}
+			className={`min-h-[1205px] md:min-h-[1205px] flex flex-col items-center pb-14 p-3 md:p-0 justify-start overflow-hidden bg-[#000000] bg-[url('/images/wod/v1/bg_mobile_elton.webp')] md:bg-[url('/images/oro/v9/bg_bio_elton_desktop.webp')] bg-contain md:bg-cover bg-top md:bg-center bg-no-repeat z-0`}
 		>
 			<div className="mx-auto lg:w-[1080px] w-full">
-				<div className="flex flex-col items-center pt-[10px] md:pt-[60px]">
-					<h2 className="font-spectral font-bold text-[#F4F0E1] text-[18px] leading-[135%] md:text-[34px] md:leading-[50px] text-center">
+				<div className="flex flex-col items-start md:items-center pt-[0px] md:pt-[60px]">
+					<h2 className="font-spectral font-bold text-[#F4F0E1] text-[24px] leading-[135%] md:text-[34px] md:leading-[50px] text-left md:text-center">
 						Quem vai te destravar?
 					</h2>
 
-					<div className="flex flex-col md:flex-row items-start justify-end gap-[30px] md:gap-[60px] mt-[340px] md:mt-[70px] w-full">
+					<div className="flex flex-col md:flex-row items-start justify-end gap-[30px] md:gap-[60px] mt-[450px] md:mt-[70px] w-full">
 						<div className="w-full md:max-w-[520px] md:ml-auto md:mr-[-80px]">
-							<h3 className="font-spectral font-bold text-[#C0964B] text-[14px] leading-[22px] md:text-[24px] md:leading-[36px] mb-[24px]">
+							<h3 className="font-spectral font-bold text-[#C0964B] text-[28px] leading-[34px] md:text-[24px] md:leading-[36px] mb-[24px]">
 								Elton Euler
 							</h3>
 
-							<div className="flex flex-col gap-[14px] font-spectral font-normal text-[#F4F0E1] text-[14px] leading-[22px] md:text-[20px] md:leading-[26px]">
+							<div className="flex flex-col gap-[22px] font-spectral font-normal text-[#F4F0E1] text-[16px] leading-[24px] md:text-[20px] md:leading-[26px] md:gap-[14px]">
 								<p>
 									É a personificação da <span className="text-[#C0964B]">persistência e da superação.</span> Ele entende como ninguém a frustração de <span className="text-[#C0964B]">se esforçar ao máximo e, ainda assim, não alcançar os resultados esperados.</span> Antes de se tornar um multimilionário e referência no desenvolvimento humano, Elton enfrentou <span className="text-[#C0964B]">17 fracassos em seus negócios</span> e chegou a acreditar que o sucesso não era para ele.
 								</p>
