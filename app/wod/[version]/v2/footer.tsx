@@ -3,36 +3,27 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<div className="bg-[#07242C] py-[40px] px-4">
-			<footer className="mx-auto lg:w-[1080px] w-full flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
+		<div className="bg-[#001017] py-[36px] px-4">
+			<footer className="mx-auto lg:w-[1080px] w-full flex flex-col items-center justify-center text-center">
+				<Image
+					src="/images/oro/v9/o-destrave-logotipo.webp"
+					alt="Logotipo O Destrave"
+					width={260}
+					height={90}
+					priority
+					className="object-contain mb-[28px]"
+				/>
 
-				<div className="font-normal font-raleway text-[14px] leading-[22px] text-white text-center lg:text-left order-2 lg:order-1">
-					<p>
-						Copyright © O Destrave.
-					</p>
+				<p className="font-spectral font-bold text-white text-[16px] leading-[24px] mb-[28px]">
+					O Destrave 2025 © Todos os Direitos Reservados.
+				</p>
 
-					<p>
-						Todos os direitos reservados.
-					</p>
-				</div>
-
-				<div className="order-1 lg:order-2">
-					<Image
-						src="/images/oro/v9/o-destrave-logotipo.webp"
-						alt="Logotipo O Destrave"
-						width={150}
-						height={50}
-						priority
-						className="object-contain"
-					/>
-				</div>
-
-				<div className="font-normal font-raleway text-[14px] leading-[22px] text-white text-center lg:text-right order-3 lg:order-3 flex flex-col">
+				<div className="font-spectral font-normal text-white text-[16px] leading-[28px] flex flex-col items-center">
 					<Link
 						href="https://rc.odestrave.com.br/politica-de-privacidade"
 						className="hover:opacity-80 transition-opacity"
 					>
-						Política de privacidade
+						Política de Privacidade
 					</Link>
 
 					<Link
@@ -42,7 +33,6 @@ export default function Footer() {
 						Termos de uso
 					</Link>
 				</div>
-
 			</footer>
 		</div>
 	);

@@ -1,44 +1,48 @@
 import type { ReactNode } from "react";
 
 interface IHeadline {
-  id: number | string;
-  isPicture: boolean;
-  isLogo: boolean;
-  title: ReactNode;
-  text: ReactNode;
+	id: number | string;
+	isPicture: boolean;
+	isLogo: boolean;
+	title: ReactNode;
+	text: ReactNode;
 }
 
 export const Headline: IHeadline[] = [
-  {
-    id: "h0",
-    isPicture: false,
-    isLogo: true,
-    title: (
-      <p className="uppercase font-spectral text-[#D3CAC0] text-[38px] font-extrabold">
-        <span className="text-[#C0964B]">
-          Destrave sua profissão e alcance promoção,
-          reconhecimento e liberdade em 1 dia.
-        </span>
-      </p>
-    ),
+	{
+		id: "h0",
+		isPicture: false,
+		isLogo: true,
 
-    text: (
-      <div className="flex flex-col gap-6 text-[#F4F0E1] font-spectral">
-        
-        <p className="text-[24px] leading-[120%] font-bold">
-          Sem trocar de carreira, sem mais
-          cursos, sem continuar travado.
-        </p>
+		title: (
+			<p className="uppercase font-spectral text-[#D3CAC0] text-[38px] leading-[115%] font-extrabold">
+				<span className="text-[#C0964B]">
+					DESTRAVE SUA PROFISSÃO
+					<br />
+					E ALCANCE PROMOÇÃO,
+					<br />
+					RECONHECIMENTO E
+					<br />
+					LIBERDADE EM 1 DIA.
+				</span>
+			</p>
+		),
 
-        <p className="text-[20px] leading-[140%] font-normal">
-          Descubra o que está te bloqueando de evoluir e vire essa chave de forma definitiva.
-        </p>
+		text: (
+			<div className="flex flex-col gap-6 text-[#F4F0E1] font-spectral">
+				<p className="text-[24px] leading-[120%] font-bold">
+					Sem trocar de carreira, sem mais
+					cursos, sem continuar travado.
+				</p>
 
-        <p className="text-[20px] leading-[140%] font-bold">
-          Faça sua inscrição 100% grátis para o evento online:
-        </p>
+				<p className="text-[20px] leading-[140%] font-normal">
+					Descubra o que está te bloqueando de evoluir e vire essa chave de forma definitiva.
+				</p>
 
-      </div>
-    ),
-  },
+				<p className="text-[20px] leading-[140%] font-bold">
+					Faça sua inscrição 100% grátis para o evento online:
+				</p>
+			</div>
+		),
+	},
 ];
