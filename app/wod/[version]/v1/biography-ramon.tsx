@@ -5,11 +5,11 @@ import React from "react";
 export default function BiographyRamon() {
 	return (
 		<section
-			className={`min-h-[1178px] md:min-h-[893px] flex flex-col items-center pb-14 p-4 md:p-0 justify-start overflow-hidden bg-[#000000] bg-[url('/images/wod/v1/bg_mobile_ramon.webp')] md:bg-[url('/images/oro/v9/bg_bio_ramon_desktop.webp.webp')] bg-contain md:bg-cover bg-top md:bg-center bg-no-repeat z-0`}
+			className={`min-h-[1178px] md:min-h-[893px] flex flex-col items-center pb-14 p-2 md:p-0 justify-start overflow-hidden bg-[#000000] bg-[url('/images/wod/v1/bg_mobile_ramon.webp')] md:bg-[url('/images/oro/v9/bg_bio_ramon_desktop.webp.webp')] bg-contain md:bg-cover bg-top md:bg-center bg-no-repeat z-0`}
 		>
 			<div className="mx-auto lg:w-[1080px] w-full">
 				<div className="flex flex-col md:flex-row items-start justify-start pt-[380px] md:pt-[90px]">
-					<div className="w-full md:max-w-[520px] order-2 md:order-1 mt-[40px] md:mt-0 md:ml-[-450px] text-left px-[2px] md:px-0">
+					<div className="w-full md:max-w-[520px] order-2 md:order-1 mt-[40px] md:mt-0 md:ml-[-450px] text-left">
 						<h2 className="font-spectral font-bold text-[#C0964B] text-[28px] leading-[36px] md:text-[24px] md:leading-[36px] mb-[24px]">
 							Ramon Galimberti
 						</h2>
