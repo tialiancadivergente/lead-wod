@@ -45,10 +45,17 @@ export default function HeroSection({
 
 						<div className="mt-2 mb-2 text-center md:text-left">
 							<div
-								className={`2md:text-[36px] text-[28px] md:text-[36px] leading-[120%] text-center md:text-left text-[#f4f0e1] font-spectral font-normal normal-case [&_*]:normal-case max-md:[&_*]:!text-[28px]`}
+								className={`hidden md:block 2md:text-[36px] md:text-[36px] leading-[120%] text-left text-[#f4f0e1] font-spectral font-normal normal-case [&_*]:normal-case`}
 							>
 								{titleRedLine}
 							</div>
+
+							<h1 className="md:hidden text-[28px] leading-[120%] text-center text-[#C0964B] font-spectral font-bold normal-case">
+								<span className="block">Destrave sua profissão</span>
+								<span className="block">e alcance promoção,</span>
+								<span className="block">reconhecimento e</span>
+								<span className="block">liberdade em 1 dia.</span>
+							</h1>
 						</div>
 
 						<div className="mb-4 mt-1 text-[#D3CAC0] font-extralight font-spectral text-center md:text-left">
