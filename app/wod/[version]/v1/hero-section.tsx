@@ -29,7 +29,7 @@ export default function HeroSection({
 			<div
 				className={`mx-auto sm:px-4 2md:pt-6 pt-2 relative lg:w-[1080px] w-full flex justify-center md:justify-start`}
 			>
-				<div className="w-full 2md:max-w-[528px] max-w-[440px] mt-[100px] md:-mt-[100px] md:ml-[-40px]">
+				<div className="w-full 2md:max-w-[528px] max-w-[440px] mt-[70px] md:-mt-[100px] md:ml-[-40px]">
 					<div className="mt-[180px] md:mt-0 mb-0 flex justify-center md:justify-start">
 						<img
 							src="/images/oro/v9/logo_destrave.png"
@@ -45,7 +45,7 @@ export default function HeroSection({
 
 						<div className="mt-2 mb-2 text-center md:text-left">
 							<div
-								className={`2md:text-[36px] text-[24px] md:text-[36px] leading-[120%] text-center md:text-left text-[#f4f0e1] font-spectral font-normal normal-case [&_*]:normal-case max-md:[&_*]:!text-[24px]`}
+								className={`2md:text-[36px] text-[28px] md:text-[36px] leading-[120%] text-center md:text-left text-[#f4f0e1] font-spectral font-normal normal-case [&_*]:normal-case max-md:[&_*]:!text-[28px]`}
 							>
 								{titleRedLine}
 							</div>
@@ -53,16 +53,16 @@ export default function HeroSection({
 
 						<div className="mb-4 mt-1 text-[#D3CAC0] font-extralight font-spectral text-center md:text-left">
 							<div className="md:hidden leading-[125%]">
-								<p className="text-[18px] font-bold mb-3">
+								<p className="text-[20px] font-bold mb-3">
 									Sem trocar de carreira, sem mais cursos, sem continuar travado.
 								</p>
 
-								<p className="text-[14px] mb-3">
+								<p className="text-[18px] mb-3">
 									Descubra o que está te bloqueando de evoluir — e vire essa
 									chave de forma definitiva.
 								</p>
 
-								<p className="text-[14px] font-bold">
+								<p className="text-[18px] font-bold">
 									Faça sua inscrição 100% grátis para o evento online:
 								</p>
 							</div>
