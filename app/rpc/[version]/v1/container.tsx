@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CustomRadio } from "@/app/components/custom-input";
 import {
@@ -64,10 +65,12 @@ export default function ContainerQuest({
   const progress = totalQuestions
     ? ((currentQuestion + 1) / totalQuestions) * 100
     : 0;
+
   const isLastQuestion = currentQuestion === totalQuestions - 1;
 
   useEffect(() => {
     const html = document.documentElement;
+
     if (theme === "2") {
       html.classList.add("light");
       html.classList.remove("dark");
@@ -80,19 +83,31 @@ export default function ContainerQuest({
   return (
     <div>
       <section
-        className={`relative flex items-center justify-center overflow-hidden h-full dark:bg-[url('/images/v21/bg_leadscore.webp')] light:bg-[url('/images/oro/splashScreen.webp')] bg-cover bg-center`}
+        className={`
+          relative
+          flex
+          items-center
+          justify-center
+          overflow-hidden
+          h-full
+          bg-[url('/images/oro/v9/bg_quiz_mobile.webp')]
+          md:dark:bg-[url('/images/oro/v9/bg_quiz_desktop.webp')]
+          light:bg-[url('/images/oro/splashScreen.webp')]
+          bg-cover
+          bg-center
+        `}
       >
         <div className="container mx-auto relative h-full px-4">
           <div className="flex flex-col items-center justify-center text-center py-8">
             <div className="w-full max-w-4xl mx-auto">
               <div className="mb-6 md:mb-8 flex justify-center">
                 <Image
-                  src={theme === "1" ? "/images/v21/logo_o_resgate_dos_otimistas.webp" : "/images/logo-o-resgate-dos-otimistas.png"}
-                  alt="Logotipo Resgate dos otimistas"
+                  src="/images/oro/v9/o-destrave-logotipo.webp"
+                  alt="Logotipo O Destrave"
                   width={424}
                   height={164}
                   priority
-                  className="object-contain select-none pointer-events-none h-auto"
+                  className="object-contain select-none pointer-events-none h-auto w-[200px] md:w-[300px]"
                   style={{
                     maxWidth: "100%",
                     height: "auto",
@@ -100,21 +115,15 @@ export default function ContainerQuest({
                 />
               </div>
 
-              <h1
-                className={`text-2xl md:text-5xl font-bold text-[#C09648] -mt-4 mb-1 md:mb-2 text-center light:text-[#006D71]`}
-              >
+              <h1 className="text-2xl md:text-5xl font-bold font-spectral dark:text-custom-primary-gold -mt-4 mb-1 md:mb-2 text-center light:text-[#006D71]">
                 FALTA APENAS UM PASSO
               </h1>
-              <h2
-                className={`text-2xl md:text-5xl font-bold text-[#C09648] mb-4 md:mb-7 text-center light:text-[#006D71]`}
-              >
+
+              <h2 className="text-2xl md:text-5xl font-bold font-spectral dark:text-custom-primary-gold mb-4 md:mb-7 text-center light:text-[#006D71]">
                 PARA GARANTIR SUA VAGA!
               </h2>
 
-              <p
-                className="light:text-[#003539] dark:text-white text-base md:text-lg mb-5 md:mb-7 text-center"
-                style={{ fontFamily: '"Roboto", Sans-serif' }}
-              >
+              <p className="dark:text-[#fff] light:text-[#07242C] text-base md:text-lg mb-5 md:mb-7 text-center font-spectral">
                 Para concluir sua inscrição, responda:
               </p>
 
@@ -130,6 +139,7 @@ export default function ContainerQuest({
                     {!isFetchingQuestions && fetchError && (
                       <div className="text-center py-4">
                         <p className="text-red-300 mb-4">{fetchError}</p>
+
                         <Button
                           onClick={fetchQuestions}
                           className="bg-teal-600 hover:bg-teal-700 text-white"
@@ -139,120 +149,139 @@ export default function ContainerQuest({
                       </div>
                     )}
 
-                    {!isFetchingQuestions && !fetchError && currentQuestionData && (
-                      <>
-                        {submitError && (
-                          <p className="text-red-300 text-sm mb-3 text-left">
-                            {submitError}
-                          </p>
-                        )}
-                        {submitSuccess && (
-                          <p className="!text-green-300 text-sm mb-3 text-left">
-                            Respostas enviadas com sucesso.
-                          </p>
-                        )}
-
-                        <div className="mb-4">
-                          <div className="w-full bg-white/20 rounded-full h-2">
-                            <div
-                              className="bg-[#e1c473] h-2 rounded-full transition-all duration-300"
-                              style={{ width: `${progress}%` }}
-                            />
-                          </div>
-                        </div>
-
-                        <h3
-                          className="text-white text-base md:text-lg font-medium mb-4 md:mb-5 md:text-left text-center"
-                          style={{
-                            color: "#fff",
-                            fontFamily: '"Roboto", Sans-serif',
-                          }}
-                        >
-                          {currentQuestionData.question}
-                        </h3>
-
-                        {isOpenInputType(currentQuestionData.inputType) ? (
-                          <input
-                            type="text"
-                            value={selectedSingleValue}
-                            onChange={(e) => handleAnswer(e.target.value)}
-                            placeholder="Digite sua resposta aqui..."
-                            className="w-full px-4 py-3 rounded-lg border border-white bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                            style={{ fontFamily: '"Roboto", Sans-serif' }}
-                          />
-                        ) : isMultipleInputType(currentQuestionData.inputType) ? (
-                          <div className="space-y-2">
-                            {currentQuestionData.options.map((option) => {
-                              const checked = selectedMultipleValue.includes(
-                                option.value
-                              );
-                              return (
-                                <button
-                                  key={option.value}
-                                  type="button"
-                                  onClick={() => handleMultipleAnswer(option.value)}
-                                  className="w-full text-left flex items-center gap-2 text-white"
-                                >
-                                  <span
-                                    className={`h-4 w-4 border border-white rounded-sm inline-flex items-center justify-center ${checked ? "bg-white" : "bg-transparent"
-                                      }`}
-                                  >
-                                    {checked && (
-                                      <span className="h-2 w-2 bg-teal-700 rounded-sm" />
-                                    )}
-                                  </span>
-                                  <span>{option.label}</span>
-                                </button>
-                              );
-                            })}
-                          </div>
-                        ) : (
-                          <CustomRadio
-                            style={{ fontFamily: '"Roboto", Sans-serif' }}
-                            options={currentQuestionData.options}
-                            value={selectedSingleValue}
-                            onChange={handleAnswer}
-                          />
-                        )}
-
-                        <div className="grid grid-cols-2 gap-3 md:gap-5 mt-5 md:mt-7">
-                          {currentQuestion > 0 ? (
-                            <Button
-                              variant="outline"
-                              onClick={handleBack}
-                              className="bg-white/90 text-black hover:bg-white/70 py-3 md:py-5 text-sm md:text-base"
-                              style={{ fontFamily: '"Roboto", Sans-serif' }}
-                            >
-                              VOLTAR
-                            </Button>
-                          ) : (
-                            <div />
+                    {!isFetchingQuestions &&
+                      !fetchError &&
+                      currentQuestionData && (
+                        <>
+                          {submitError && (
+                            <p className="text-red-300 text-sm mb-3 text-left">
+                              {submitError}
+                            </p>
                           )}
-                          <Button
-                            onClick={handleNext}
-                            disabled={
-                              !isCurrentQuestionAnswered || isSubmittingAnswers
-                            }
-                            className={`bg-[#e1c473] hover:bg-[#f1dfab] text-black font-bold py-3 md:py-5 text-sm md:text-base ${currentQuestion === 0 ? "col-span-2" : ""
-                              }`}
-                            style={{ fontFamily: '"Roboto", Sans-serif' }}
+
+                          {submitSuccess && (
+                            <p className="!text-green-300 text-sm mb-3 text-left">
+                              Respostas enviadas com sucesso.
+                            </p>
+                          )}
+
+                          <div className="mb-4">
+                            <div className="w-full bg-white/20 rounded-full h-2">
+                              <div
+                                className="bg-teal-500 h-2 rounded-full transition-all duration-300"
+                                style={{ width: `${progress}%` }}
+                              />
+                            </div>
+                          </div>
+
+                          <h3
+                            className="text-white text-base md:text-lg font-medium mb-4 md:mb-5 md:text-left text-center"
+                            style={{
+                              color: "#fff",
+                              fontFamily: '"Roboto", Sans-serif',
+                            }}
                           >
-                            {isLastQuestion
-                              ? isSubmittingAnswers
-                                ? "ENVIANDO..."
-                                : submitSuccess
+                            {currentQuestionData.question}
+                          </h3>
+
+                          {isOpenInputType(currentQuestionData.inputType) ? (
+                            <input
+                              type="text"
+                              value={selectedSingleValue}
+                              onChange={(e) => handleAnswer(e.target.value)}
+                              placeholder="Digite sua resposta aqui..."
+                              className="w-full px-4 py-3 rounded-lg border border-white bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                              style={{ fontFamily: '"Roboto", Sans-serif' }}
+                            />
+                          ) : isMultipleInputType(
+                              currentQuestionData.inputType
+                            ) ? (
+                            <div className="space-y-2">
+                              {currentQuestionData.options.map((option) => {
+                                const checked = selectedMultipleValue.includes(
+                                  option.value
+                                );
+
+                                return (
+                                  <button
+                                    key={option.value}
+                                    type="button"
+                                    onClick={() =>
+                                      handleMultipleAnswer(option.value)
+                                    }
+                                    className="w-full text-left flex items-center gap-2 text-white"
+                                  >
+                                    <span
+                                      className={`h-4 w-4 border border-white rounded-sm inline-flex items-center justify-center ${
+                                        checked
+                                          ? "bg-white"
+                                          : "bg-transparent"
+                                      }`}
+                                    >
+                                      {checked && (
+                                        <span className="h-2 w-2 bg-teal-700 rounded-sm" />
+                                      )}
+                                    </span>
+
+                                    <span>{option.label}</span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          ) : (
+                            <CustomRadio
+                              style={{ fontFamily: '"Roboto", Sans-serif' }}
+                              options={currentQuestionData.options}
+                              value={selectedSingleValue}
+                              onChange={handleAnswer}
+                            />
+                          )}
+
+                          <div className="grid grid-cols-2 gap-3 md:gap-5 mt-5 md:mt-7">
+                            {currentQuestion > 0 ? (
+                              <Button
+                                variant="outline"
+                                onClick={handleBack}
+                                className="bg-transparent border-gray-700 text-white hover:bg-gray-800 py-3 md:py-5 text-sm md:text-base"
+                                style={{
+                                  fontFamily: '"Roboto", Sans-serif',
+                                }}
+                              >
+                                VOLTAR
+                              </Button>
+                            ) : (
+                              <div />
+                            )}
+
+                            <Button
+                              onClick={handleNext}
+                              disabled={
+                                !isCurrentQuestionAnswered ||
+                                isSubmittingAnswers
+                              }
+                              className={`bg-teal-600 hover:bg-teal-700 text-white py-3 md:py-5 text-sm md:text-base ${
+                                currentQuestion === 0 ? "col-span-2" : ""
+                              }`}
+                              style={{
+                                fontFamily: '"Roboto", Sans-serif',
+                              }}
+                            >
+                              {isLastQuestion
+                                ? isSubmittingAnswers
+                                  ? "ENVIANDO..."
+                                  : submitSuccess
                                   ? "ENVIADO"
                                   : "ENVIAR"
-                              : "PRÓXIMA"}
-                          </Button>
-                        </div>
-                      </>
-                    )}
+                                : "PRÓXIMA"}
+                            </Button>
+                          </div>
+                        </>
+                      )}
                   </div>
                 </div>
               )}
 
-              <div className="mb-6 md:mb-8 text-center text-white">
+              <div className="mb-6 md:mb-8 text-center text-white flex flex-col items-center">
                 {showLeadCaptureForm ? (
                   <div className="w-full max-w-lg mx-auto">
                     <LeadCaptureForm
@@ -267,13 +296,12 @@ export default function ContainerQuest({
                   </div>
                 ) : (
                   <>
-                    <p
-                      className="dark:text-white light:text-[#07242C] text-xs md:text-sm mb-4 md:mb-5"
-                      style={{ fontFamily: '"Roboto", Sans-serif' }}
-                    >
-                      Após responder as questões, toque no botão abaixo
-                      <br className="hidden md:block" />
-                      para receber o link e materiais do evento:
+                    <p className="dark:text-white light:text-[#07242C] text-xs md:text-sm mb-4 md:mb-5 font-spectral text-center max-w-[540px]">
+                      Abra o e-mail que nossa equipe te enviou,
+                      <br />
+                      para garantir o recebimento do link da transmissão
+                      <br />
+                      e de todos os materiais exclusivos do evento.
                     </p>
 
                     <Button
@@ -285,7 +313,7 @@ export default function ContainerQuest({
                         fontFamily: '"Roboto", Sans-serif',
                       }}
                     >
-                      Entrar no Grupo
+                      Clique aqui para entrar no Grupo no WhatsApp
                     </Button>
                   </>
                 )}
@@ -294,25 +322,45 @@ export default function ContainerQuest({
           </div>
         </div>
       </section>
-      <footer className="w-full bg-[#00171a] h-[150px]">
-        <div className="container mx-auto h-full px-4 flex items-center justify-between">
-          <p
-            className="text-white text-sm text-center md:text-left font-mulish"
+
+      <footer className="w-full bg-[#07242C] py-8 px-4">
+        <div className="max-w-[1200px] mx-auto flex flex-col md:grid md:grid-cols-3 items-center gap-6">
+          <div
+            className="text-white text-sm md:text-base text-center md:text-left order-3 md:order-1"
+            style={{ fontFamily: '"Roboto", Sans-serif' }}
           >
-            Copyright © O Resgate Dos Otimistas. <br />Todos os direitos reservados.
-          </p>
-          <Image
-            src={"/images/logo.png"}
-            alt="Logotipo O Resgate Dos Otimistas"
-            width={250}
-            height={32}
-            priority
-            className="object-contain select-none pointer-events-none h-auto"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-            }}
-          />
+            © 2025 - Todos os direitos reservados.
+          </div>
+
+          <div className="flex justify-center order-1 md:order-2">
+            <Image
+              src="/images/oro/v9/logo_alianca.png"
+              alt="Logo Aliança"
+              width={180}
+              height={60}
+              className="object-contain h-auto w-[140px] md:w-[180px]"
+            />
+          </div>
+
+          <div className="text-center md:text-right order-2 md:order-3">
+            <Link href="LINK_DA_POLITICA">
+              <p
+                className="text-white text-sm md:text-base cursor-pointer"
+                style={{ fontFamily: '"Roboto", Sans-serif' }}
+              >
+                Política de Privacidade
+              </p>
+            </Link>
+
+            <Link href="LINK_DOS_TERMOS">
+              <p
+                className="text-white text-sm md:text-base cursor-pointer"
+                style={{ fontFamily: '"Roboto", Sans-serif' }}
+              >
+                Termos de uso
+              </p>
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
