@@ -1,5 +1,5 @@
 export const DEFAULT_QUEST_FORM_VERSION_ID =
-  "9a75c470-f7d6-4ae5-ad92-e74add87b274";
+  "e77bcb6c-f73b-4681-ad26-c7b982f73293";
 
 const QUEST_WHATSAPP_URL_BY_TEMPERATURE = {
   f: "https://sendflow.click/i/wod-cap-2026",
